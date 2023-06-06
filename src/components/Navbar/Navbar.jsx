@@ -14,10 +14,12 @@ const Navbar = () => {
   return (
     <nav>
       <div className="container nav_container">
+        {/* navbar logo */}
         <Link to="/" className="logo" onClick={() => setIsNavShowing(false)}>
           <img src={Logo} alt="Nav Logo" />
         </Link>
 
+        {/* navbar ul li links */}
         <ul className={`nav_links ${isNavShowing ? "show_nav" : "hide_nav"}`}>
           {links.map(({ name, path }, index) => {
             // console.log(name, path, index);
@@ -30,11 +32,18 @@ const Navbar = () => {
                 >
                   {name}
                 </NavLink>
+
+                {/* <NavLink to="/">Home</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <NavLink to="/gallery">Gallery</NavLink>
+            <NavLink to="/plans">Plans</NavLink>
+            <NavLink to="/trainers">Trainers</NavLink> */}
               </li>
             );
           })}
         </ul>
 
+        {/* navbar three line button */}
         <button
           className="nav_toggle-btn"
           onClick={() => setIsNavShowing((prev) => !prev)}
